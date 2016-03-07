@@ -4,60 +4,12 @@
 <meta charset="UTF-8">
 <title>Work with Customer and Employee data</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#btn1").click(function(){
-                var cont = "y"
-
-                while (cont == "y") {
-                    var person = prompt("Create customer or employee? (c/e):");
-
-                    if (person == 'c') {
-                        document.getElementById("loading").innerHTML =
-                                "Creating Customer data...";
-                        var firstName = prompt("Enter first name:");
-                        var lastName = prompt("Enter Last name:");
-                        var email = prompt("Enter email address:");
-                        var customerNumber = prompt("Enter Customer number:");
-
-                        $("#field").append("" +
-                                "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
-                                "<p>You entered: </p>" +
-                                "<p>Name: " + firstName + " " + lastName + "</p>" +
-                                "<p>Email: " + email + "</p>" +
-                                "<p>Customer number: " + customerNumber + "</p>" +
-                                "</div>"
-                        );
-                        var cont = prompt("Continue? (y/n): ");
-                    }
-
-                    if (person == 'e') {
-                        document.getElementById("loading").innerHTML =
-                                "Creating Employee data...";
-                        var firstName = prompt("Enter first name:");
-                        var lastName = prompt("Enter Last name:");
-                        var email = prompt("Enter email address:");
-                        var social = prompt("Social security number:");
-
-                        $("#field").append("" +
-                                "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
-                                "<p>You entered: </p>" +
-                                "<p>Name: " + firstName + " " + lastName + "</p>" +
-                                "<p>Email: " + email + "</p>" +
-                                "<p>Social security number: " + social + "</p>" +
-                                "</div>"
-                        );
-                        var cont = prompt("Continue? (y/n): ");
-                    }
-                }
-            });
-
-        });
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="index.js"></script>
 
 </head>
 
+<body onload="myFunction()">
 
 <h1>Welcome to the Person Tester application</h1>
 
