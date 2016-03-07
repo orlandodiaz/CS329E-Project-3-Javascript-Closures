@@ -85,7 +85,7 @@ var employee = function(p){
 }(person);
 
 
-//Begin button
+//User interface
 
 $(document).ready(function(){
     $("#btn1").click(function(){
