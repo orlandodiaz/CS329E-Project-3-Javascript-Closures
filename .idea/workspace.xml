@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6e0055f-d9cb-4a22-b296-de58afe9ece0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/11-1/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/11-1/index.html" afterPath="$PROJECT_DIR$/11-1/index.html" />
     </list>
     <ignored path="PLProject3.iws" />
@@ -41,14 +38,14 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/11-1/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19245283">
-              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.40754718">
+              <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
               <folding>
                 <element signature="n#style#0;n#p#1;n#html#0;n#!!top" expanded="true" />
-                <marker date="1457330405000" expanded="true" signature="1005:1025" placeholder="..." />
-                <marker date="1457330405000" expanded="true" signature="1005:1049" placeholder="..." />
-                <marker date="1457330405000" expanded="true" signature="1050:1376" placeholder="..." />
-                <marker date="1457330405000" expanded="true" signature="2046:2090" placeholder="..." />
+                <marker date="1457330730000" expanded="true" signature="1005:1025" placeholder="..." />
+                <marker date="1457330730000" expanded="true" signature="1005:1049" placeholder="..." />
+                <marker date="1457330730000" expanded="true" signature="1050:1381" placeholder="..." />
+                <marker date="1457330730000" expanded="true" signature="2043:2087" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -885,12 +882,12 @@
       <created>1457323270771</created>
       <option name="number" value="Default" />
       <updated>1457323270771</updated>
-      <workItem from="1457323272863" duration="7119000" />
+      <workItem from="1457323272863" duration="7345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7119000" />
+    <option name="totallyTimeSpent" value="7345000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="22" width="1280" height="1493" extended-state="0" />
@@ -1010,14 +1007,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/11-1/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19245283">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.40754718">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#p#1;n#html#0;n#!!top" expanded="true" />
-            <marker date="1457330405000" expanded="true" signature="1005:1025" placeholder="..." />
-            <marker date="1457330405000" expanded="true" signature="1005:1049" placeholder="..." />
-            <marker date="1457330405000" expanded="true" signature="1050:1376" placeholder="..." />
-            <marker date="1457330405000" expanded="true" signature="2046:2090" placeholder="..." />
+            <marker date="1457330730000" expanded="true" signature="1005:1025" placeholder="..." />
+            <marker date="1457330730000" expanded="true" signature="1005:1049" placeholder="..." />
+            <marker date="1457330730000" expanded="true" signature="1050:1381" placeholder="..." />
+            <marker date="1457330730000" expanded="true" signature="2043:2087" placeholder="..." />
           </folding>
         </state>
       </provider>
