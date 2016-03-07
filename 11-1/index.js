@@ -1,80 +1,3 @@
-$(document).ready(function(){
-    $("#btn1").click(function(){
-        var cont = "y"
-
-        while (cont == "y") {
-            var person = prompt("Create customer or employee? (c/e):");
-
-            if (person == 'c') {
-                document.getElementById("loading").innerHTML =
-                    "Creating Customer data...";
-                var firstName = prompt("Enter first name:");
-                var lastName = prompt("Enter Last name:");
-
-                // prompt and validate email
-                var email = false
-                while (validateEmail(email) == false)
-                  var email = prompt("Enter email address")
-
-
-                var customerNumber = prompt("Enter Customer number:");
-
-                $("#field").append("" +
-                    "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
-                    "<p>You entered: </p>" +
-                    "<p>Name: " + firstName + " " + lastName + "</p>" +
-                    "<p>Email: " + email + "</p>" +
-                    "<p>Customer number: " + customerNumber + "</p>" +
-                    "</div>"
-                );
-                var cont = prompt("Continue? (y/n): ");
-
-                document.getElementById("loading").innerHTML =
-                    "Done.";
-            }
-
-            if (person == 'e') {
-                document.getElementById("loading").innerHTML =
-                    "Creating Employee data...";
-                var firstName = prompt("Enter first name:");
-                var lastName = prompt("Enter Last name:");
-
-                // prompt and validate email
-                var email = false
-                while (validateEmail(email) == false)
-                    var email = prompt("Enter email address")
-
-
-                var social = prompt("Social security number:");
-
-                $("#field").append("" +
-                    "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
-                    "<p>You entered: </p>" +
-                    "<p>Name: " + firstName + " " + lastName + "</p>" +
-                    "<p>Email: " + email + "</p>" +
-                    "<p>Social security number: " + social + "</p>" +
-                    "</div>"
-                );
-                var cont = prompt("Continue? (y/n): ");
-
-                document.getElementById("loading").innerHTML =
-                    "Done.";
-            }
-        }
-    });
-
-});
-
-//Function to validate email
-function validateEmail(email)
-{
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
-
-
-
-
 
 //Object-oriented Programming
 
@@ -113,7 +36,9 @@ var customer = function(p){
 
     // private data
     var data = {
-        customerNum:'00000'
+        customerNum:'00000',
+        $setcustomerNum: function(n){data.customerNum = n },
+
     };
 
     var F = function(){};
@@ -139,7 +64,9 @@ var employee = function(p){
 
     // private data
     var data = {
-        SSN:'000-00-0000'
+        SSN:'000-00-0000',
+        $setSSN: function(n){data.SSN = n },
+
     };
 
     var F = function(){};
@@ -158,38 +85,99 @@ var employee = function(p){
 }(person);
 
 
+//Begin button
+
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        var cont = "y"
+
+        while (cont == "y") {
+            var person = prompt("Create customer or employee? (c/e):");
+
+            if (person == 'c') {
+
+                var c = Object.create(customer);
+
+                document.getElementById("loading").innerHTML =
+                    "Creating Customer data...";
+                var firstName = prompt("Enter first name:");
+                c.run('$setfirstName')(firstName)
+
+                var lastName = prompt("Enter Last name:");
+                c.run('$setlastName')(lastName)
 
 
+                // prompt and validate email
+                var email = false
+                while (validateEmail(email) == false)
+                  var email = prompt("Enter email address")
+                  c.run('$setEmail')(email)
 
 
-
-function myFunction() {
-
-    var person1 = Object.create(person);
-/*
-   // alert(person.sname);
-    alert(person1.sname);
-    alert(person1.getfirstName);
-*/
-    alert(person1.run('firstName'));
-    alert(person1.run('lastName'));
-    alert(person1.run('email'));
-
-    person1.run('$setfirstName')('Ryan');
-
-    person1.run('$setlastName')('Gosling');
-
-    person1.run('$setEmail')('ryan@gosling.com');
+                var customerNumber = prompt("Enter Customer number:");
+                c.run('$setcustomerNum')(customerNumber)
 
 
-    alert(person1.run('firstName'));
-    alert(person1.run('lastName'));
-    alert(person1.run('email'));
+                $("#field").append("" +
+                    "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
+                    "<p>You entered: </p>" +
+                    "<p>Name: " + c.run('firstName') + " " + c.run('lastName') + "</p>" +
+                    "<p>Email: " + c.run('email') + "</p>" +
+                    "<p>Customer number: " + c.run('customerNum') + "</p>" +
+                    "</div>"
+                );
+                var cont = prompt("Continue? (y/n): ");
+
+                document.getElementById("loading").innerHTML =
+                    "Done.";
+            }
+
+            if (person == 'e') {
+                var e = Object.create(employee);
+
+                document.getElementById("loading").innerHTML =
+                    "Creating Employee data...";
+                var firstName = prompt("Enter first name:");
+                e.run('$setfirstName')(firstName)
+
+                var lastName = prompt("Enter Last name:");
+                e.run('$setlastName')(lastName)
+
+                // prompt and validate email
+                var email = false
+                while (validateEmail(email) == false)
+                    var email = prompt("Enter email address")
+                    e.run('$setEmail')(email)
 
 
+                var social = prompt("Social security number:");
+                e.run('$setSSN')(social)
 
+                $("#field").append("" +
+                    "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
+                    "<p>You entered: </p>" +
+                    "<p>Name: " + e.run('firstName') + " " + e.run('lastName') + "</p>" +
+                    "<p>Email: " + e.run('email') + "</p>" +
+                    "<p>Social security number: " + e.run('SSN') + "</p>" +
+                    "</div>"
+                );
+                var cont = prompt("Continue? (y/n): ");
 
+                document.getElementById("loading").innerHTML =
+                    "Done.";
+            }
+        }
+    });
+
+});
+
+//Function to validate email
+function validateEmail(email)
+{
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
 }
+
 
 
 
