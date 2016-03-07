@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Work with Customer and Employee data</title>
+<meta charset="UTF-8">
+<title>Work with Customer and Employee data</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                var cont = "y"
+
+                while (cont == "y") {
+                    var person = prompt("Create customer or employee? (c/e):");
+
+                    if (person == 'c') {
+                        document.getElementById("loading").innerHTML =
+                                "Creating Customer data...";
+                        var firstName = prompt("Enter first name:");
+                        var lastName = prompt("Enter Last name:");
+                        var email = prompt("Enter email address:");
+                        var customerNumber = prompt("Enter Customer number:");
+
+                        $("#field").append("" +
+                                "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
+                                "<p>You entered: </p>" +
+                                "<p>Name: " + firstName + " " + lastName + "</p>" +
+                                "<p>Email: " + email + "</p>" +
+                                "<p>Customer number: " + firstName + "</p>" +
+                                "</div>"
+                        );
+                        var cont = prompt("Continue? (y/n): ");
+                    }
+
+                    if (person == 'e') {
+                        document.getElementById("loading").innerHTML =
+                                "Creating Employee data...";
+                        var firstName = prompt("Enter first name:");
+                        var lastName = prompt("Enter Last name:");
+                        var email = prompt("Enter email address:");
+                        var customerNumber = prompt("Social security number:");
+
+                        $("#field").append("" +
+                                "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
+                                "<p>You entered: </p>" +
+                                "<p>Name: " + firstName + " " + lastName + "</p>" +
+                                "<p>Email: " + email + "</p>" +
+                                "<p>Social security number: " + firstName + "</p>" +
+                                "</div>"
+                        );
+                        var cont = prompt("Continue? (y/n): ");
+                    }
+                }
+            });
+
+        });
+    </script>
+
 </head>
-<body>
+
+
 <h1>Welcome to the Person Tester application</h1>
 
 </br>
 
-<!-- prompt to to create customer or employee (c/e) using dialog box -->
-<!-- prompt for first, last, email, and customer number/social security -->
+<p>Click below to begin the program</p>
 
-<p>You entered: X</p>
-<p>Name: X</p>
-<p>Email: X</p>
-<p>Customer number: X</p>
+<button id="btn1">Begin</button>
 
-<br/>
-
-<!-- prompt to continue (y/n) using dialog box -->
-<!-- prompt to to create customer or employee (c/e) using dialog box -->
-<!-- prompt for first, last, email, and customer number/social security -->
+<p style="color:red;" id ="loading"></p>
 
 
-<p>You entered: X</p>
-<p>Name: X</p>
-<p>Email: X</p>
-<p>Social security number: X</p>
-
-
-
-
-<!-- prompt to continue (y/n) using dialog box -->
+<div id="field">
+</div>
 
 
 
