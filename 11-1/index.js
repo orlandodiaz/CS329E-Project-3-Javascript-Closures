@@ -76,31 +76,36 @@ function validateEmail(email)
 
 
 
-
+//Object-oriented Programming
 
 //Person object
-var person = function() { // This line to the line with "}();" creates a Closure
+var person = function(){ // This line to the line with "}();" creates a Closure.
+    // private data
+    var data = {            // This is an exmaple of a javaScript Object.
+        firstName:'Root first name',
+        $setfirstName: function(n){data.firstName = n },
 
-    var data = {
-        name: 'person',
-        email: 'person@email.com'
+        lastName: 'Root last name',
+        $setlastName: function(n){data.memo += 1; data.lastName = n},
 
+        email: 'root@email.com',
+        $setEmail: function(n){data.memo += 1; data.email = n}
     };
 
     var F = function(){};
     f = new F();
 
+    // public data
+    f.sname = 'Substance'
 
-    f.sname = 'person'
+    //methods
+
     f.run = function (e) {
         return data[e];
     };
 
     return f;
-
-
 }();
-
 
 //Customer object
 
@@ -108,7 +113,7 @@ var customer = function(p){
 
     // private data
     var data = {
-        name:'customer'
+        customerNum:'00000'
     };
 
     var F = function(){};
@@ -122,6 +127,8 @@ var customer = function(p){
         if(r === undefined) return F.prototype.run(e);
         else return r;
     };
+
+
 
     return f;
 }(person);
@@ -158,19 +165,28 @@ var employee = function(p){
 
 function myFunction() {
 
+    var person1 = Object.create(person);
+/*
+   // alert(person.sname);
+    alert(person1.sname);
+    alert(person1.getfirstName);
+*/
+    alert(person1.run('firstName'));
+    alert(person1.run('lastName'));
+    alert(person1.run('email'));
 
-    var employee1 = Object.create(employee);
+    person1.run('$setfirstName')('Ryan');
 
-    alert(person.name);
-    alert(person.sname);
-    alert(customer.cname);
-    alert(employee.ename);
-    alert(employee1.ename);
+    person1.run('$setlastName')('Gosling');
+
+    person1.run('$setEmail')('ryan@gosling.com');
 
 
+    alert(person1.run('firstName'));
+    alert(person1.run('lastName'));
+    alert(person1.run('email'));
 
 
-    alert(person1.name);
 
 
 }
