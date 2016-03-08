@@ -1,10 +1,9 @@
-//Object-oriented Programming
+// Object-oriented Programming
 
-//Person object
+// person object
 "use strict";
 var person = function () { // This line to the line with "}();" creates a Closure.
     // private data
-
     var data = { // This is an exmaple of a javaScript Object.
         firstName: 'Root first name',
         $setfirstName: function (n) {
@@ -27,9 +26,6 @@ var person = function () { // This line to the line with "}();" creates a Closur
     var F = function () {};
     var f = new F();
 
-    // public data
-    f.sname = 'Substance';
-
     //methods
 
     f.run = function (e) {
@@ -39,25 +35,22 @@ var person = function () { // This line to the line with "}();" creates a Closur
     return f;
 }();
 
-//Customer object
-
+// customer object
 var customer = function (p) {
 
     // private data
     var data = {
-        customerNum: '00000',
+        customerNum: 'M00000',
         $setcustomerNum: function (n) {
             data.customerNum = n;
         }
-
     };
 
     var F = function () {};
     F.prototype = p; // The prototype property sets up Inheritance.
     var f = new F();
 
-    // public data
-    f.cname = 'customer';
+    //methods
     f.run = function (e) {
         var r = data[e];
         if (r === undefined) {
@@ -67,13 +60,10 @@ var customer = function (p) {
         }
     };
 
-
-
     return f;
 }(person);
 
-//Employee Object
-
+// employee Object
 var employee = function (p) {
 
     // private data
@@ -89,8 +79,6 @@ var employee = function (p) {
     F.prototype = p; // The prototype property sets up Inheritance.
     var f = new F();
 
-    // public data
-    f.ename = 'employee';
     f.run = function (e) {
         var r = data[e];
         if (r === undefined) {
@@ -99,16 +87,15 @@ var employee = function (p) {
             return r;
         }
     };
-
     return f;
 }(person);
 
-//Function to validate email
+// email validator
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
-//User interface
+// user interface
 
 $(document).ready(function () {
     $("button").click(function () {
@@ -119,7 +106,6 @@ $(document).ready(function () {
         $("#second").show();
         document.getElementById("loading").innerHTML = "";
         document.getElementById("field").innerHTML = "";
-
 
 
         while (cont.toLowerCase() === "y") {
@@ -169,11 +155,11 @@ $(document).ready(function () {
                     "\nCustomer number: " + c.run('customerNum'));
 
                 $("#field").append(
-                    "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
+                    "<div style = 'background-color:#F9FFD9;margin:10px;padding:10px;'>" +
                          "<p>You entered: </p>" +
-                         "<p>Name: " + c.run('firstName') + " " + c.run('lastName') + "</p>" +
-                         "<p>Email: " + c.run('email') + "</p>" +
-                         "<p>Customer number: " + c.run('customerNum') + "</p>" +
+                         "<p><b>Name:</b> " + c.run('firstName') + " " + c.run('lastName') + "</p>" +
+                         "<p><b>Email:</b> " + c.run('email') + "</p>" +
+                         "<p><b>Customer number:</b>" + c.run('customerNum') + "</p>" +
                          "</div>"
                 );
 
@@ -217,11 +203,11 @@ $(document).ready(function () {
                     "\nSocial security number: " + e.run('SSN'));
 
                 $("#field").append(
-                    "<div style = 'border:1px solid red;margin:5px;padding:5px;'>" +
+                    "<div style = 'background-color:#F9FFD9;margin:10px;padding:10px;'>" +
                          "<p>You entered: </p>" +
-                         "<p>Name: " + e.run('firstName') + " " + e.run('lastName') + "</p>" +
-                         "<p>Email: " + e.run('email') + "</p>" +
-                         "<p>Social security number: " + e.run('SSN') + "</p>" +
+                         "<p><b>Name:</b> " + e.run('firstName') + " " + e.run('lastName') + "</p>" +
+                         "<p><b>Email:</b>" + e.run('email') + "</p>" +
+                         "<p><b>Social security number:</b>" + e.run('SSN') + "</p>" +
                          "</div>"
                 );
 
